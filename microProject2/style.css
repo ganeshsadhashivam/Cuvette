@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+
+  background: lightskyblue;
+  justify-content: center;
+
+  max-height: 100vh;
+  margin: auto auto;
+}
+
+.container {
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+  background: whitesmoke;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container div button {
+  margin: 1em;
+  width: 10em;
+  background: lightskyblue;
+  border: none;
+  padding: 1em;
+}
