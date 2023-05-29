@@ -27,6 +27,9 @@ const rockSelected = document.getElementById("rock-selected");
 const paperSelected = document.getElementById("paper-selected");
 const scissorSelected = document.getElementById("scissor-selected");
 
+const rockSelectedTwo = document.getElementById("rock-selected-two");
+const rockSelectedThree = document.getElementById("rock-selected-three");
+
 //score updation
 let playerScore = document.getElementById("player-score");
 let computerScore = document.getElementById("computer-score");
@@ -63,7 +66,10 @@ function playerOption(selectedOpt) {
   console.log(selectedOpt);
   if (selectedOpt === "rock") {
     rock.style.outline = "1px solid green";
-    rock.style.outlineWidth = "30px";
+    // rockSelectedTwo.style.outline = "1px solid lightgreen";
+
+    rock.style.outlineWidth = "9px";
+
     rockSelected.textContent = "you Picked";
   } else if (selectedOpt === "scissor") {
     scissor.style.outline = "1px solid green";
