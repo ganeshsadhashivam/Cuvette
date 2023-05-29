@@ -7,12 +7,6 @@
 body {
   background: #8cc461;
   font-size: xx-large;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 100vh;
-  text-align: center;
-  justify-content: center; */
 }
 
 .box-container {
@@ -36,9 +30,6 @@ body {
 
 .box-container div {
   flex-direction: column;
-  /* padding: 1rem; */
-  /* border: 1px solid black; */
-  /* padding: 1rem; */
 }
 
 .box-container .score-box {
@@ -49,8 +40,7 @@ body {
   background: white;
   color: black !important;
   margin: 1rem;
-  /* width: 250px;
-  height: 200px; */
+
   width: 210px;
   height: 150px;
   text-align: center;
@@ -79,8 +69,6 @@ body {
 }
 
 .icons-box {
-  /* border: 1px solid black; */
-
   flex-direction: row;
   justify-content: space-evenly;
 }
@@ -108,8 +96,7 @@ body {
 
 #rock {
   background: white;
-  /* width: 200px;
-  height: 200px; */
+
   width: 150px;
   height: 150px;
   margin: 1rem;
@@ -125,10 +112,6 @@ body {
 }
 
 #rock img {
-  /* position: absolute;
-  top: 370px;
-  left: 495px; */
-
   position: absolute;
   top: 418px;
   left: 495px;
@@ -138,46 +121,17 @@ body {
   border: 10px solid #171717a3;
   transform: rotateZ(90deg);
   width: -1px;
-  /* height: 266px; */
+
   height: 19rem;
   position: absolute;
   top: 305px;
   background: #171717a3;
 }
 #line-box-2 {
-  /* border: 10px solid #171717a3;
-  transform: rotateZ(137deg);
-  width: 1px;
-  height: 130px;
-  position: absolute;
-  top: 454px;
-  right: 865px;
-
-  background: #171717a3; */
-  /* border: 10px solid #171717a3;
-  transform: rotateZ(137deg);
-  width: 1px;
-  /* height: 130px; 
-  height: 10rem;
-  position: absolute;
-  top: 444px;
-  right: 865px;
-  background: #171717a3; */
-
-  /* border: 10px solid #171717a3;
-  transform: rotateZ(131deg);
-  width: 1px px;
-  /* height: 130px; 
-  height: 15rem;
-  position: absolute;
-  top: 429px;
-  right: 865px;
-  background: #171717a3; */
-
   border: 10px solid #171717a3;
   transform: rotateZ(140deg);
   width: 1px px;
-  /* height: 130px; */
+
   height: 15rem;
   position: absolute;
   top: 421px;
@@ -185,21 +139,10 @@ body {
   background: #171717a3;
 }
 #line-box-3 {
-  /* border: 9px solid #171717a3;
-  transform: rotateZ(223deg);
-  width: 0px;
-  /* height: 131px; 
-  height: 10rem;
-  position: absolute;
-  top: 456px;
-  right: 634px;
-
-  background: #171717a3; */
-
   border: 9px solid #171717a3;
   transform: rotateZ(222deg);
   width: 0px;
-  /* height: 131px; */
+
   height: 15rem;
   position: absolute;
   top: 418px;
@@ -208,8 +151,7 @@ body {
 }
 #paper {
   background: white;
-  /* width: 200px;
-  height: 200px; */
+
   width: 150px;
   height: 150px;
   margin: 1rem;
@@ -218,10 +160,6 @@ body {
   z-index: 1;
 }
 #paper img {
-  /* position: absolute;
-  top: 370px;
-  left: 950px; */
-
   position: absolute;
   top: 420px;
   left: 951px;
@@ -235,8 +173,7 @@ body {
 
 #scissor {
   background: white;
-  /* width: 200px;
-  height: 200px; */
+
   width: 150px;
   height: 150px;
   margin: 2rem;
@@ -334,13 +271,106 @@ body {
 }
 
 #play-again {
-  border: 1px solid white;
-  background: transparent;
+  /* border: 1px solid white;
+
   padding: 1rem;
   color: white;
   border-radius: 30px;
   position: relative;
   left: 700px;
   bottom: 300px;
+  display: none; */
+  border: 1px solid white;
+  padding: 1rem;
+  /* color: white; */
+  border-radius: 10px;
+  position: relative;
+  left: 720px;
+  bottom: 332px;
   display: none;
+}
+
+/*for cup and stars page*/
+#winner-page img {
+}
+
+#cup {
+  position: absolute;
+  right: 45%;
+  top: 40%;
+}
+
+#star1 {
+  position: absolute;
+  right: 35%;
+  top: 36%;
+}
+
+#star2 {
+  position: absolute;
+  right: 40%;
+  top: 10%;
+}
+#star3 {
+  position: absolute;
+  right: 30%;
+  top: 5%;
+}
+#star4 {
+  position: absolute;
+  right: 46%;
+  top: 29%;
+}
+#star5 {
+  position: absolute;
+  right: 50%;
+  top: 20%;
+}
+#star6 {
+  position: absolute;
+  right: 60%;
+  top: 45%;
+}
+#star7 {
+  position: absolute;
+  right: 60%;
+  top: 37%;
+}
+#star9 {
+  position: absolute;
+  right: 60%;
+  top: 18%;
+}
+
+#hurray {
+  position: absolute;
+  top: 70%;
+  right: 32%;
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  color: white;
+}
+
+#youWon {
+  position: absolute;
+  top: 84%;
+  right: 32%;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  color: white;
+}
+
+#playAgain {
+  position: absolute;
+  top: 92%;
+  right: 48%;
+
+  color: #0e0e0e;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+}
+
+#moves {
+  color: white;
 }

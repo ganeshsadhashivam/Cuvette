@@ -36,10 +36,12 @@ computerScore.innerText = 0;
 //playagain
 
 const playAgain = document.getElementById("play-again");
+const playAgainWinnerPage = document.getElementById("playAgain");
 
 //next button
 
 const nextButton = document.getElementById("next");
+nextButton.style.display = "none";
 
 //after winning by player
 const totalContent = document.getElementById("total-content");
@@ -47,6 +49,14 @@ console.log(totalContent);
 
 //moves
 let moves = 10;
+
+// for hiding the content in winner
+const box = document.querySelector(".box-container");
+const icons = document.querySelector(".icons-container");
+const result = document.querySelector("#result");
+
+//for play Again
+const winnerPage = document.getElementById("winner-page");
 
 //design
 function playerOption(selectedOpt) {
@@ -157,6 +167,8 @@ function checkSelectedButtons(playerSelected, computerSelected) {
     movesLeft.textContent += moves;
   }
   if (playerSelected !== computerSelected) {
+    console.log("playerSelected !== computerSelected");
+    console.log(playerSelected !== computerSelected);
     if (playerSelected === "rock" && computerSelected === "paper") {
       computerScore.innerHTML = ++computerscore;
     } else if (playerSelected === "paper" && computerSelected === "rock") {
@@ -170,8 +182,23 @@ function checkSelectedButtons(playerSelected, computerSelected) {
     } else if (playerSelected === "rock" && computerSelected === "scissor") {
       playerScore.innerHTML = ++playerscore;
     }
+  } else if (playerSelected === computerSelected) {
+    console.log("elseif");
+    console.log(playerSelected, computerSelected);
+    if (playerSelected === computerSelected && "rock") {
+      rock.style.outline = "1px solid green";
+      rock.style.outlineWidth = "30px";
+      rockSelected.textContent = "You And Computer Picked Same";
+    } else if (playerSelected === computerSelected && "paper") {
+      paper.style.outline = "1px solid green";
+      paper.style.outlineWidth = "30px";
+      paperSelected.textContent = "You And Computer Picked Same";
+    } else {
+      scissor.style.outline = "1px solid green";
+      scissor.style.outlineWidth = "30px";
+      scissorSelected.textContent = "You And Computer Picked Same";
+    }
   }
-  console.log(playerSelected !== computerSelected);
 }
 
 //winner
@@ -179,7 +206,8 @@ function winner() {
   console.log(playerscore, computerscore);
   if (playerscore > computerscore) {
     resultWin.textContent = "You Won !";
-    playerWon();
+    nextButton.style.display = "inline";
+    // playerWon();
   } else if (playerscore < computerscore) {
     resultWin.textContent = "Computer Won !";
     playAgain.style.display = "inline";
@@ -204,17 +232,114 @@ function showRules() {
 
 //player won
 function playerWon() {
-  totalContent.style.display = "none";
-  const section = document.createElement("section");
+  // const images = [
+  //   "Star 1.png",
+  //   "Star 2.png",
+  //   "Star 3.png",
+  //   "Star 4.png",
+  //   "Star 5.png",
+  //   "Star 6.png",
+  //   "Star 7.png",
+  //   "Star 9.png",
+  // ];
+  // totalContent.style.display = "none";
+  box.style.display = "none";
+  icons.style.display = "none";
+  result.style.display = "none";
+  nextButton.style.display = "none";
+
+  const section = document.getElementById("winner-page");
   const img = document.createElement("img");
-  document.append(section);
+  img.src = "./Vector (3).png";
+  img.alt = "cup";
+  img.id = "cup";
   section.appendChild(img);
-  img.setAttribute("src");
-  document.appendChild(section);
+  // images.map((img, index) => {
+  //   let image = document.createElement("img");
+  //   image.src = `${img}`;
+  //   image.alt = "stars";
+  //   section.appendChild(image);
+  //   document.appendChild(section);
+  // });
+  let star1 = document.createElement("img");
+  star1.src = "./Star 1.png";
+  star1.alt = "stars";
+  star1.id = "star1";
+  section.appendChild(star1);
+  let star2 = document.createElement("img");
+  star2.src = "./Star 2.png";
+  star2.alt = "stars";
+  star2.id = "star2";
+  section.appendChild(star2);
+  let star3 = document.createElement("img");
+  star3.src = "./Star 3.png";
+  star3.alt = "stars";
+  star3.id = "star3";
+  let star4 = document.createElement("img");
+  star4.src = "./Star 4.png";
+  star4.alt = "stars";
+  star4.id = "star4";
+  section.appendChild(star4);
+  let star5 = document.createElement("img");
+  star5.src = "./Star 5.png";
+  star5.alt = "stars";
+  star5.id = "star5";
+  section.appendChild(star5);
+  let star6 = document.createElement("img");
+  star6.src = "./Star 6.png";
+  star6.alt = "stars";
+  star6.id = "star6";
+  section.appendChild(star6);
+  let star7 = document.createElement("img");
+  star7.src = "./Star 7.png";
+  star7.alt = "stars";
+  star7.id = "star7";
+  section.appendChild(star7);
+  let star9 = document.createElement("img");
+  star9.src = "./Star 9.png";
+  star9.alt = "stars";
+  star9.id = "star9";
+  section.appendChild(star9);
+  let h1 = document.createElement("h1");
+  h1.innerText = "HURRAY!!";
+  h1.id = "hurray";
+  section.appendChild(h1);
+  let h4 = document.createElement("h4");
+  h4.innerText = "YOU WON THE GAME";
+  h4.id = "youWon";
+  section.appendChild(h4);
+  let button = document.createElement("button");
+  button.innerText = "PLAY AGAIN";
+  button.id = "playAgain";
+  section.appendChild(button);
 }
+
+//game Reset Replay playAgain
+
+function resetGame() {
+  console.log("reset");
+  lineOne.style.display = "inline";
+  lineTwo.style.display = "inline";
+  lineThree.style.display = "inline";
+  playAgain.style.display = "none";
+  result.style.display = "none";
+  computerScore.innerText = 0;
+  playerScore.innerText = 0;
+  result.innerText = 0;
+  playerscore = 0;
+  computerscore = 0;
+  moves.textContent = null;
+  moves = 0;
+
+  // winnerPage.style.display = "none";
+  // totalContent.style.display = "inline";
+}
+
 rock.addEventListener("click", player);
 paper.addEventListener("click", player);
 scissor.addEventListener("click", player);
 gamesRules.addEventListener("click", hideRules);
 rulesText.addEventListener("click", showRules);
 nextButton.addEventListener("click", playerWon);
+playAgain.addEventListener("click", resetGame);
+// playAgainWinnerPage.addEventListener("click", resetGame);
